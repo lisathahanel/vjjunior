@@ -1,0 +1,954 @@
+<html lang="en">
+<head>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2269884583846743"
+     crossorigin="anonymous"></script>
+
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-2269884583846743?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  
+ 
+  <meta charset="UTF-8"></meta>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+  <title>FREE vj junior translated movies</title>
+
+  <!--SEO Meta Description-->
+  <meta content="Enjogerere by Vj Junior Download & Watch full Movies translated by VJ Junior #Kagujje #uganda" name="description"></meta>
+
+  <!--Robots-->
+  <meta content="index, follow" name="robots"></meta>
+
+  <!--Fonts and Styles-->
+  <link href="https://fonts.googleapis.com" rel="preconnect"></link>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"></link>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"></link>
+
+  <link href="styles/general.css" rel="stylesheet"></link>
+  <link href="styles/header.css" rel="stylesheet"></link>
+  <link href="styles/video.css" rel="stylesheet"></link>
+  <link href="styles/sidebar.css" rel="stylesheet"></link>
+
+
+  <main>
+    <section style="text-align: center;">
+<!--===================== MOVIES INFINITE SCROLL =====================-->
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* ===================== MOVIE WRAPPER ===================== */
+
+.movie-grid-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.grid-title {
+  text-align: center;
+  font-size: 26px;
+  margin: 0 0 25px;
+  color: #fcff01;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===================== MOVIE GRID ===================== */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* ===================== MOVIE CARD ===================== */
+
+.movie-card {
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,.8);
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 10px 28px rgba(229,9,20,.7);
+}
+
+.movie-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===================== POSTER ===================== */
+
+.poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: #181818;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition:
+    transform .35s ease,
+    filter .35s ease;
+}
+
+.movie-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(.55);
+}
+
+/* ===================== PLAY BUTTON ===================== */
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65px;
+  height: 65px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: rgba(229,9,20,.92);
+  color: #fff;
+  text-align: center;
+  line-height: 65px;
+  font-size: 42px;
+  box-shadow: 0 0 20px #e50914;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.movie-card:hover .play-button {
+  opacity: 1;
+}
+
+/* ===================== TITLE ===================== */
+
+.movie-title {
+  min-height: 55px;
+  max-height: 55px;
+  padding: 9px 7px;
+  background: #e50914;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* ===================== SKELETON ===================== */
+
+.movie-skeleton {
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,.6);
+}
+
+.skeleton-poster {
+  aspect-ratio: 2 / 3;
+  background:
+    linear-gradient(
+      110deg,
+      #151515 8%,
+      #242424 18%,
+      #151515 33%
+    );
+  background-size: 200% 100%;
+  animation: skeletonMove 1.3s linear infinite;
+}
+
+.skeleton-title {
+  height: 55px;
+  margin-top: 0;
+  background:
+    linear-gradient(
+      110deg,
+      #151515 8%,
+      #242424 18%,
+      #151515 33%
+    );
+  background-size: 200% 100%;
+  animation: skeletonMove 1.3s linear infinite;
+}
+
+@keyframes skeletonMove {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+/* ===================== LOADING MORE ===================== */
+
+.movie-loading-more {
+  width: 100%;
+  text-align: center;
+  padding: 30px 10px;
+  color: #fcff01;
+  font-size: 15px;
+  grid-column: 1 / -1;
+}
+
+.movie-loading-spinner {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 10px;
+  border: 4px solid #333;
+  border-top-color: #e50914;
+  border-radius: 50%;
+  animation: movieSpin .7s linear infinite;
+}
+
+@keyframes movieSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===================== END MESSAGE ===================== */
+
+.movie-end {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 35px 10px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* ===================== MOBILE ===================== */
+
+@media(max-width:600px) {
+
+  .movie-grid-wrapper {
+    padding: 0 10px;
+    margin-top: 20px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 10px;
+  }
+
+  .grid-title {
+    font-size: 21px;
+    margin-bottom: 18px;
+  }
+
+  .movie-title {
+    min-height: 48px;
+    max-height: 48px;
+    font-size: 13px;
+    padding: 6px 5px;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 31px;
+  }
+}
+</style>
+
+
+<!--===================== MOVIE GRID =====================-->
+
+<div class="movie-grid-wrapper">
+
+  <div class="grid-title">
+    🎬 Firimu
+  </div>
+
+  <div class="movie-grid" id="movie-grid"></div>
+
+</div>
+
+
+<!--===================== INFINITE MOVIE LOADER =====================-->
+
+<script>
+(function () {
+
+  "use strict";
+
+  /* =========================================
+     SETTINGS
+  ========================================= */
+
+  var BLOG_URL =
+    "https://naka.marketing2advertising.com";
+
+  var LABEL =
+    "vj-junior";
+
+  /*
+     Number of movies requested per Blogger
+     JSONP request.
+  */
+  var BATCH_SIZE = 24;
+
+  /*
+     Start loading the next batch when the
+     visitor gets this close to the bottom.
+  */
+  var SCROLL_TRIGGER = 900;
+
+  /*
+     Maximum number of requests.
+     0 = unlimited until Blogger has no more.
+  */
+  var MAX_REQUESTS = 100;
+
+
+  /* =========================================
+     STATE
+  ========================================= */
+
+  var startIndex = 1;
+
+  var loading = false;
+
+  var finished = false;
+
+  var requestNumber = 0;
+
+  var movieGrid =
+    document.getElementById("movie-grid");
+
+
+  if (!movieGrid) {
+    return;
+  }
+
+
+  /* =========================================
+     ESCAPE HTML
+  ========================================= */
+
+  function escapeHTML(text) {
+
+    if (!text) {
+      return "";
+    }
+
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+
+  /* =========================================
+     GET POST URL
+  ========================================= */
+
+  function getPostUrl(entry) {
+
+    if (!entry.link) {
+      return "#";
+    }
+
+    for (var i = 0; i < entry.link.length; i++) {
+
+      if (entry.link[i].rel === "alternate") {
+        return entry.link[i].href;
+      }
+
+    }
+
+    return "#";
+  }
+
+
+  /* =========================================
+     GET IMAGE
+  ========================================= */
+
+  function getPostImage(entry) {
+
+    var image =
+      "https://via.placeholder.com/600x900?text=No+Image";
+
+    if (
+      entry.media$thumbnail &&
+      entry.media$thumbnail.url
+    ) {
+
+      image =
+        entry.media$thumbnail.url
+          .replace("/s72-c/", "/s600/")
+          .replace("=s72-c", "=s600");
+
+    }
+
+    else if (
+      entry.content &&
+      entry.content.$t
+    ) {
+
+      var match =
+        entry.content.$t.match(
+          /<img[^>]+src=["']([^"']+)["']/i
+        );
+
+      if (match && match[1]) {
+        image = match[1];
+      }
+
+    }
+
+    else if (
+      entry.summary &&
+      entry.summary.$t
+    ) {
+
+      var summaryMatch =
+        entry.summary.$t.match(
+          /<img[^>]+src=["']([^"']+)["']/i
+        );
+
+      if (summaryMatch && summaryMatch[1]) {
+        image = summaryMatch[1];
+      }
+
+    }
+
+    return image;
+  }
+
+
+  /* =========================================
+     SKELETONS
+  ========================================= */
+
+  function showSkeletons(count) {
+
+    var html = "";
+
+    for (var i = 0; i < count; i++) {
+
+      html +=
+        '<div class="movie-skeleton">' +
+          '<div class="skeleton-poster"></div>' +
+          '<div class="skeleton-title"></div>' +
+        '</div>';
+
+    }
+
+    movieGrid.insertAdjacentHTML(
+      "beforeend",
+      html
+    );
+  }
+
+
+  /* =========================================
+     REMOVE SKELETONS
+  ========================================= */
+
+  function removeSkeletons() {
+
+    var skeletons =
+      movieGrid.querySelectorAll(
+        ".movie-skeleton"
+      );
+
+    for (var i = 0; i < skeletons.length; i++) {
+      skeletons[i].remove();
+    }
+  }
+
+
+  /* =========================================
+     LOADING INDICATOR
+  ========================================= */
+
+  function showLoadingIndicator() {
+
+    var old =
+      document.getElementById(
+        "movieLoadingIndicator"
+      );
+
+    if (old) {
+      return;
+    }
+
+    var div =
+      document.createElement("div");
+
+    div.id =
+      "movieLoadingIndicator";
+
+    div.className =
+      "movie-loading-more";
+
+    div.innerHTML =
+      '<div class="movie-loading-spinner"></div>' +
+      'Loading more movies...';
+
+    movieGrid.appendChild(div);
+  }
+
+
+  function removeLoadingIndicator() {
+
+    var indicator =
+      document.getElementById(
+        "movieLoadingIndicator"
+      );
+
+    if (indicator) {
+      indicator.remove();
+    }
+  }
+
+
+  /* =========================================
+     END OF MOVIES
+  ========================================= */
+
+  function showEndMessage() {
+
+    removeLoadingIndicator();
+
+    var end =
+      document.createElement("div");
+
+    end.className =
+      "movie-end";
+
+    end.textContent =
+      "You've reached the end of the movies.";
+
+    movieGrid.appendChild(end);
+
+  }
+
+
+  /* =========================================
+     JSONP CALLBACK
+  ========================================= */
+
+  window.m2aMoviesCallback =
+    function (json) {
+
+      loading = false;
+
+      removeLoadingIndicator();
+
+      removeSkeletons();
+
+
+      if (
+        !json ||
+        !json.feed ||
+        !json.feed.entry ||
+        !json.feed.entry.length
+      ) {
+
+        finished = true;
+
+        if (
+          movieGrid.querySelectorAll(
+            ".movie-card"
+          ).length
+        ) {
+
+          showEndMessage();
+
+        } else {
+
+          movieGrid.innerHTML =
+            '<div class="movie-end">' +
+            'No movies found in ' +
+            '<strong>' +
+            escapeHTML(LABEL) +
+            '</strong>.' +
+            '</div>';
+
+        }
+
+        return;
+      }
+
+
+      var entries =
+        json.feed.entry;
+
+
+      var html = "";
+
+
+      for (
+        var i = 0;
+        i < entries.length;
+        i++
+      ) {
+
+        var entry =
+          entries[i];
+
+        var title =
+          entry.title &&
+          entry.title.$t
+            ? entry.title.$t
+            : "Untitled Movie";
+
+        var url =
+          getPostUrl(entry);
+
+        var image =
+          getPostImage(entry);
+
+
+        html +=
+
+          '<div class="movie-card">' +
+
+            '<a href="' +
+            escapeHTML(url) +
+            '"' +
+            ' title="' +
+            escapeHTML(title) +
+            '"' +
+            ' rel="noopener noreferrer">' +
+
+              '<div class="poster">' +
+
+                '<img src="' +
+                escapeHTML(image) +
+                '"' +
+                ' alt="' +
+                escapeHTML(title) +
+                '"' +
+                ' loading="lazy">' +
+
+                '<div class="play-button">' +
+                '&#9658;' +
+                '</div>' +
+
+              '</div>' +
+
+              '<div class="movie-title">' +
+                escapeHTML(title) +
+              '</div>' +
+
+            '</a>' +
+
+          '</div>';
+
+      }
+
+
+      movieGrid.insertAdjacentHTML(
+        "beforeend",
+        html
+      );
+
+
+      /*
+        If Blogger returned fewer posts than
+        requested, we have reached the end.
+      */
+
+      if (
+        entries.length < BATCH_SIZE
+      ) {
+
+        finished = true;
+
+        showEndMessage();
+
+        return;
+      }
+
+
+      /*
+        Move to the next Blogger page.
+      */
+
+      startIndex += entries.length;
+
+
+      /*
+        Immediately check whether the page is
+        already close to the bottom.
+      */
+
+      checkScroll();
+
+    };
+
+
+  /* =========================================
+     LOAD NEXT BATCH
+  ========================================= */
+
+  function loadMovies() {
+
+    if (loading || finished) {
+      return;
+    }
+
+
+    if (
+      MAX_REQUESTS > 0 &&
+      requestNumber >= MAX_REQUESTS
+    ) {
+
+      finished = true;
+
+      showEndMessage();
+
+      return;
+    }
+
+
+    loading = true;
+
+    requestNumber++;
+
+
+    /*
+       Skeleton cards appear while Blogger
+       loads the next batch.
+    */
+
+    showSkeletons(6);
+
+    showLoadingIndicator();
+
+
+    var callbackName =
+      "m2aMoviesCallback";
+
+
+    /*
+       JSONP request.
+
+       start-index allows the next batch
+       to continue from the previous batch.
+    */
+
+    var script =
+      document.createElement("script");
+
+
+    script.src =
+      BLOG_URL +
+      "/feeds/posts/default/-/" +
+      encodeURIComponent(LABEL) +
+      "?alt=json-in-script" +
+      "&start-index=" +
+      startIndex +
+      "&max-results=" +
+      BATCH_SIZE +
+      "&orderby=published" +
+      "&callback=" +
+      callbackName;
+
+
+    script.async = true;
+
+    script.onerror = function () {
+
+      loading = false;
+
+      removeLoadingIndicator();
+
+      removeSkeletons();
+
+      /*
+         Allow another attempt when the
+         visitor scrolls again.
+      */
+
+    };
+
+
+    document.body.appendChild(script);
+
+  }
+
+
+  /* =========================================
+     SMART SCROLL DETECTION
+  ========================================= */
+
+  function checkScroll() {
+
+    if (loading || finished) {
+      return;
+    }
+
+
+    var scrollPosition =
+      window.innerHeight +
+      window.scrollY;
+
+
+    var pageHeight =
+      document.documentElement.scrollHeight;
+
+
+    /*
+       Load another batch when the visitor
+       is within 900px of the bottom.
+    */
+
+    if (
+      scrollPosition >=
+      pageHeight - SCROLL_TRIGGER
+    ) {
+
+      loadMovies();
+
+    }
+
+  }
+
+
+  /* =========================================
+     SCROLL EVENT
+  ========================================= */
+
+  var scrollTimer = null;
+
+
+  window.addEventListener(
+    "scroll",
+    function () {
+
+      if (scrollTimer) {
+        return;
+      }
+
+
+      scrollTimer =
+        setTimeout(function () {
+
+          scrollTimer = null;
+
+          checkScroll();
+
+        }, 120);
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  /* =========================================
+     RESIZE
+  ========================================= */
+
+  window.addEventListener(
+    "resize",
+    checkScroll
+  );
+
+
+  /* =========================================
+     FIRST LOAD
+  ========================================= */
+
+  loadMovies();
+
+})();
+</script>
+
+<div class='mobile-hub'>
+
+    
+  <div id='emb99d-footer' style='background:#111; text-align:center; padding:10px 0; font-family:Raleway, Arial, sans-serif;'>
+
+    <a href='/' rel='noopener noreferrer' style='color:#04ff00; margin:0 6px; text-decoration:none;'>Home</a>
+    <span style='color:#fff;'>|</span>
+    
+    <a href='https://www.marketing2advertising.com/p/contact-us.html' rel='noopener noreferrer' style='color:#04ff00; margin:0 6px; text-decoration:none;'>Contact</a>
+    <span style='color:#fff;'>|</span>
+    
+    <a href='https://www.marketing2advertising.com/p/privacy-policy.html' rel='noopener noreferrer' style='color:#04ff00; margin:0 6px; text-decoration:none;' target='_blank'>Privacy</a>
+    <span style='color:#fff;'>|</span>
+    
+    <a href='https://www.marketing2advertising.com/p/affiliate-marketing-and-adsense.html' rel='noopener noreferrer' style='color:#04ff00; margin:0 6px; text-decoration:none;' target='_blank'>Disclosure</a>
+    <span style='color:#fff;'>|</span>
+    
+    <a href='https://www.marketing2advertising.com/p/terms-and-conditions.html' rel='noopener noreferrer' style='color:#04ff00; margin:0 6px; text-decoration:none;' target='_blank'>Terms</a>
+  
+    <p style='color:#aaa; font-size:14px; margin:10px 0 0;'>
+      &#169; Marketing2Advertising. All rights reserved.
+    </p>
+
+</div>
+
+<script>
+(function() {
+  try {
+    if (window.self !== window.top) {
+      var el = document.getElementById(&quot;emb99d-footer&quot;);
+      if (el) el.style.display = &quot;none&quot;;
+    }
+  } catch (e) {
+    // If cross-origin iframe blocks access, still hide it
+    var el = document.getElementById(&quot;emb99d-footer&quot;);
+    if (el) el.style.display = &quot;none&quot;;
+  }
+})();
+</script>
+  
+<div class='mobile-only-bar'/>
+  </div>
+    
+      <script>
+(function() {
+  try {
+    // Detect if page is inside iframe
+    if (window.self !== window.top) {
+      var el = document.getElementById(&quot;e66d-hide&quot;);
+      if (el) el.style.display = &quot;none&quot;;
+    }
+  } catch (e) {
+    // If cross-origin iframe, still hide
+    var el = document.getElementById(&quot;e66d-hide&quot;);
+    if (el) el.style.display = &quot;none&quot;;
+  }
+})();
+</script>
+    
+
+</section>
+  </main>
+</html>
